@@ -36,7 +36,7 @@ const checkJwt = jwt({
   algorithm: ["RS256"]
 });
 
-app.get("/api/external", checkJwt, jwtAuthz(['developers.read']),(req, res) => {
+app.get("/api/external", checkJwt, jwtAuthz(['read:developers']),(req, res) => {
   res.send({
     msg: "Your access token was successfully validated!"
   });
